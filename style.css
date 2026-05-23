@@ -1,0 +1,46 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  line-height: 1.6;
+}
+
+header, nav, main, footer {
+  padding: 1rem;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 15px;
+  padding: 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: black;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: black;
+  color: white;
+  padding: 8px;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+a:focus, button:focus, input:focus, textarea:focus {
+  outline: 3px solid black;
+}
+
+section {
+  margin-bottom: 20px;
+}
