@@ -1,46 +1,76 @@
+ :root {
+  --bg: #ffffff;
+  --text: #000;
+  --primary: #0077ff;
+}
+
+[data-theme="dark"] {
+  --bg: #121212;
+  --text: #fff;
+  --primary: #4da3ff;
+}
+
 body {
-  font-family: Arial, sans-serif;
   margin: 0;
-  line-height: 1.6;
+  font-family: Arial;
+  background: var(--bg);
+  color: var(--text);
 }
 
-header, nav, main, footer {
-  padding: 1rem;
-}
-
+/* NAV */
 nav ul {
   display: flex;
-  list-style: none;
   gap: 15px;
-  padding: 0;
+  list-style: none;
+  padding: 1rem;
+  background: var(--primary);
 }
 
 nav a {
+  color: white;
   text-decoration: none;
-  color: black;
 }
 
-nav a:hover {
-  text-decoration: underline;
+/* GRID */
+main {
+  display: grid;
+  gap: 20px;
+  padding: 1rem;
 }
 
+/* FLEX */
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.card {
+  flex: 1 1 200px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+/* ACCESSIBILITY */
 .skip-link {
   position: absolute;
   top: -40px;
-  left: 0;
-  background: black;
-  color: white;
-  padding: 8px;
 }
 
 .skip-link:focus {
   top: 0;
 }
 
-a:focus, button:focus, input:focus, textarea:focus {
-  outline: 3px solid black;
+/* RESPONSIVE */
+@media (min-width: 768px) {
+  main {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
-section {
-  margin-bottom: 20px;
+@media (min-width: 1024px) {
+  main {
+    grid-template-columns: 2fr 1fr;
+  }
 }
